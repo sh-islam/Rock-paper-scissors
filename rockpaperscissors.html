@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Global?
+    let computerScore, userScore;
+
+
+    //Step 3
+    function getComputerChoice(){
+      let choices = ["rock", "paper", "scissors"];
+      return choices[Math.floor(Math.random()*choices.length)];
+    }
+
+    //Step 4
+    function playRound(playerSelection, computerSelection){
+      let playerChoice  = (prompt("Type: rock/paper/scissors", "")).toLowerCase();
+      let computerChoice = getComputerChoice();
+
+      console.log(playerSelection);
+
+      if (playerChoice == "rock" && computerChoice == "scissors") {
+        userScore++;
+        return "Rock beats scissors, you win!";
+      }
+      else if (playerChoice == "paper" && computerChoice == "rock") {
+        userScore++;
+        return "Paper beats rock, you win!";
+      }
+      else if (playerChoice == "scissors" && computerChoice == "paper") {
+        userScore++;
+        return "Scissors beats paper, you win!";
+      }
+      else if (playerChoice == "rock" && computerChoice == "paper") {
+        computerScore++;
+        return "Rock is defeated by paper, you lose!";
+      }
+      else if (playerChoice == "scissors" && computerChoice == "rock") {
+        computerScore++;
+        return "Scissors are defeated by rock, you lose!";
+      }
+      else if (playerChoice == "paper" && computerChoice == "scissors"){
+        computerScore++;
+        return "Paper is defeated by scissors, you lose!";
+      }
+      else return "Tie.";
+      
+    }
+
+    //Step 5
+    let game = () => {
+      computerScore = 0;
+      userScore = 0;
+      
+      for (let i = 0; i < 5; i++){
+        console.log(playRound());
+      }
+      
+      if (computerScore > userScore){
+        return "You were slain by the machine!";
+      }
+      else if (userScore > computerScore){
+        return "You have won the war against the machine!";
+      }
+      else return "A tie. Nothing to celebrate."
+    
+      
+    }
+
+    window.stop();
+  </script>
+  <title>"5 games of rock, paper, scissors"</title>
+</head>
+<body>
+  
+</body>
+</html>
