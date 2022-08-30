@@ -49,7 +49,7 @@ function playRound(playerSelection, computerSelection){
 function injectHearts(){
   for (let i = 0; i < 3; i++){
     var img = document.createElement("img");
-    img.src = "/images/pixelheart.png";
+    img.src = "/Rock-paper-scissors/images/pixelheart.png";
     var src = document.getElementById("insertHearts");
     src.append(img);
   }
@@ -58,7 +58,7 @@ function injectHearts(){
 function injectBrokenHearts(){
   for (let i = 0; i < 3; i++){
     var img = document.createElement("img");
-    img.src = "/images/brokenheart.png";
+    img.src = "/Rock-paper-scissors/images/brokenheart.png";
     var src = document.getElementById("insertHearts");
     src.append(img);
   }
