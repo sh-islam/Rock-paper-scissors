@@ -1,7 +1,3 @@
-
-
-
-
 let computerScore = 0, userScore = 0;
 
 
@@ -42,6 +38,34 @@ function playRound(playerSelection, computerSelection){
     }
 
 
+// function playHearts(){
+//   let bottomImages = document.querySelector(".bottom").querySelectorAll(".btm.unactive");
+//   console.log(bottomImages);
+//   bottomImages.forEach(botImg => botImg.classList.remove("unactive"));
+//   console.log(bottomImages);
+// }
+
+
+function injectHearts(){
+  for (let i = 0; i < 3; i++){
+    var img = document.createElement("img");
+    img.src = "/images/pixelheart.png";
+    var src = document.getElementById("insertHearts");
+    src.append(img);
+  }
+}
+
+function injectBrokenHearts(){
+  for (let i = 0; i < 3; i++){
+    var img = document.createElement("img");
+    img.src = "/images/brokenheart.png";
+    var src = document.getElementById("insertHearts");
+    src.append(img);
+  }
+}
+
+
+
 
 const buttons = document.querySelectorAll(".btn");
 const statusText = document.querySelector(".status");
@@ -59,17 +83,26 @@ buttons.forEach((button)=>{button.addEventListener('click',()=>{
     cpuScoreText.textContent = "CPU score: " + computerScore;
 
     if (userScore === 5 || computerScore === 5){
-        if (computerScore > userScore) window.alert("You lose! You were slain by the machine");
-        else window.alert("You have won the war against the machine!");
+        if (computerScore > userScore) {
+          window.alert("You lose! You were slain by the machine");
+          injectBrokenHearts();
+        }
+        else {
+          window.alert("You have won the war against the machine!");
+          injectHearts();
+        }
         statusText.textContent = "Refreshing page...";
-        
         setTimeout(() => {
+          let bottomImages = document.querySelector(".bottom").querySelectorAll(".btm.unactive");
+          bottomImages.forEach(botImg => botImg.classList.add("unactive"));
             window.location.reload();
-         }, 500);
+         }, 2200);
          userScore = 0, computerScore = 0;
     }
     
     
 })
 });
+
+
 
