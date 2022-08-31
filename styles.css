@@ -230,6 +230,7 @@ button:active{
 
   button{
     margin: 100% 10px;
+    margin-top: 110%;
     justify-content: space-between;
     margin-bottom: 40px;
     height: 90px;
@@ -252,5 +253,10 @@ button:active{
     margin: 20px auto;
   }
 
+
+  #headers{
+    padding: 5px;
+    font-size: 16px;
+  }
 
 }
