@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
 
 body{
   width: 100%;
@@ -50,10 +50,8 @@ html{
   }
 }
 
- @keyframes flash {
-  100%{
-    color: red;
-  }
+@keyframes flash {
+  100%{color: red;}
 }
 
 #buttons {
@@ -114,7 +112,8 @@ button:active{
 .status{
   flex: 1 1 1;
   margin: 3px;
-  font-family: 'Permanent Marker', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+  font-family: 'Inconsolata', monospace;
   color:white;
   text-shadow: 3px 3px black;
   
@@ -145,6 +144,7 @@ button:active{
   position:absolute;
   left:0;
   right:0;
+  font-family: 'Inconsolata', monospace;
 }
 
   #userScore{
@@ -153,15 +153,18 @@ button:active{
   margin-right: 20px;
   border-radius: 25px;
   width: 200px;
-  
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 #cpuScore{
   background-color: beige;
   display: inline-block;
+  margin-left: 20px;
   border-radius: 25px;
   width: 200px;
- 
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .resultsAndControls {
