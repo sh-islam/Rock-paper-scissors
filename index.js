@@ -49,6 +49,7 @@ function playRound(playerSelection, computerSelection){
 function injectHearts(){
   for (let i = 0; i < 3; i++){
     var img = document.createElement("img");
+    img.classList.add("class"+ i.toString());
     img.src = "/Rock-paper-scissors/images/pixelheart.png";
     var src = document.getElementById("insertHearts");
     src.append(img);
@@ -58,6 +59,7 @@ function injectHearts(){
 function injectBrokenHearts(){
   for (let i = 0; i < 3; i++){
     var img = document.createElement("img");
+    img.classList.add("class"+ i.toString());
     img.src = "/Rock-paper-scissors/images/brokenheart.png";
     var src = document.getElementById("insertHearts");
     src.append(img);
@@ -69,12 +71,14 @@ function injectBrokenHearts(){
 
 const buttons = document.querySelectorAll(".btn");
 const statusText = document.querySelector(".status");
+const statusBar = document.querySelector(".statusbar");
 const resultText = document.querySelector(".resultText");
 const userScoreText = document.querySelector("#userScore");
 const cpuScoreText = document.querySelector("#cpuScore");
 
 
 buttons.forEach((button)=>{button.addEventListener('click',()=>{
+    statusBar.classList.remove("pending");
 
     playerChoice = button.id;
     statusText.textContent = "You clicked " + playerChoice;
